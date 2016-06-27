@@ -1,0 +1,34 @@
+{
+  "name": "static-site-example",
+  "private": true,
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "cheerio": "^0.20.0",
+    "connect-modrewrite": "^0.9.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.0.0",
+    "gulp-git": "^1.7.2",
+    "gulp-less": "^3.1.0",
+    "gulp-load-plugins": "^1.2.4",
+    "handlebars": "^4.0.5",
+    "highlight.js": "^9.4.0",
+    "metalsmith": "^2.1.0",
+    "metalsmith-assets": "^0.1.0",
+    "metalsmith-drafts": "0.0.1",
+    "metalsmith-each": "^0.1.1",
+    "metalsmith-headings-identifier": "0.0.11",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-layouts": "^1.4.1",
+    "metalsmith-less": "^2.0.0",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-slug": "^0.2.0",
+    "path": "^0.12.7",
+    "serve-static": "^1.11.0",
+    "slugify-path": "^1.2.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "run-sequence": "^1.2.1"
+  }
+}

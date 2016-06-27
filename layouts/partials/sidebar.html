@@ -1,0 +1,6 @@
+<ul class="menu">
+	<li><a href="/">Welcome</a></li>
+	{{#each mainNav}}
+		<li class="{{class}} {{#equal ../path link}}active{{/equal}}"><a href="{{link}}">{{label}}</a></li>
+	{{/each}}
+</ul>

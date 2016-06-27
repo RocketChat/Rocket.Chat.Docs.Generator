@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>{{ title }}</title>
+	<meta name="description" content="{{ description }}">
+	<link rel="stylesheet" href="{{rootPath}}/assets/main.css">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.4.0/styles/default.min.css">
+</head>
+<body>
+	<div class="header">
+		{{> header}}
+	</div>
+	<div class="main">
+		<div class="sidebar">
+			{{> sidebar }}
+		</div>
+		<div class="content">
+			<article>
+				<header>
+					<a href="{{githubPath}}">Edit on GitHub</a>
+				</header>
+				{{{ contents }}}
+			</article>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="{{rootPath}}/assets/main.js"></script>
+</body>
+</html>
