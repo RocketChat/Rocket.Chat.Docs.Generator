@@ -67,7 +67,7 @@ function generateMenu() {
 
 		var newFolders = _.sortBy(folders, 'sortTitle');
 		for (var file in files) {
-			files[file].path = '/' + file.substr(0, file.lastIndexOf('/')).replace(/^[0-9]+\. /, '');
+			files[file].path = '/' + file.replace(/(\/[^/]+)\.md/, '$1').replace(/\/index$/, '');
 			files[file].mainNav = newFolders;
 		}
 
