@@ -23,3 +23,7 @@ It will also create a `build` directory with the static pages.
 # Requirements
 
 * Gulp (`npm i -g gulp-cli`)
+
+## Note
+
+If you are adding files or directories to the docs, the *hot reload* will not see those files/directories until you restart `gulp`.
