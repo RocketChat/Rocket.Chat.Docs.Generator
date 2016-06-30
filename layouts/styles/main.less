@@ -163,6 +163,30 @@ hr {
 				color: @primary-color;
 			}
 		}
+
+		.search {
+			border: 1px solid #e6e6e6;
+			height: 30px;
+
+			.icon {
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				margin-top: 5px;
+				margin-left: 6px;
+				z-index: 2;
+			}
+			span.algolia-autocomplete {
+				height: 100%;
+			}
+			input {
+				padding: 0 10px 0 30px;
+				border: none;
+				height: 100%;
+				display: inline-block;
+				background-color: transparent;
+			}
+		}
 	}
 }
 

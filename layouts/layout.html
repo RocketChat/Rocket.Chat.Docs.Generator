@@ -6,6 +6,7 @@
 	<meta name="description" content="{{ description }}">
 	<link rel="stylesheet" href="{{rootPath}}/assets/main.css">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.4.0/styles/default.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
 </head>
 <body>
 	<!-- Google Tag Manager -->
@@ -35,5 +36,13 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript" src="{{rootPath}}/assets/main.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+	<script type="text/javascript">
+		docsearch({
+			apiKey: '75295a81b01359d7048b766a0fe98a2f',
+			indexName: 'rocketchat',
+			inputSelector: '#search'
+		});
+	</script>
 </body>
 </html>
