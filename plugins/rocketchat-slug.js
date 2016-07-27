@@ -31,17 +31,19 @@ function slug(filePath, data, removeMDLink) {
 	for (var i = 0; i < totalParts; i++) {
 		fileParts[i] = fileParts[i].replace(/^[0-9]+\. /, '');
 		if (i + 1 === totalParts) {
-			var lastDot = fileParts[i].lastIndexOf('.');
-			if (lastDot > -1) {
-				// console.log('name ->',fileParts[i].substr(0, lastDot));
-				var extension = fileParts[i].substr(lastDot);
-				if (extension === '.md' && !!removeMDLink) {
-					extension = '';
-				}
+			if (fileParts[i].match(/\.md$/)) {
+				var lastDot = fileParts[i].lastIndexOf('.');
+				if (lastDot > -1) {
+					// console.log('name ->',fileParts[i].substr(0, lastDot));
+					var extension = fileParts[i].substr(lastDot);
+					if (extension === '.md' && !!removeMDLink) {
+						extension = '';
+					}
 
-				fileParts[i] = slugifyPath(fileParts[i].substr(0, lastDot)) + extension;
-			} else {
-				fileParts[i] = slugifyPath(fileParts[i]);
+					fileParts[i] = slugifyPath(fileParts[i].substr(0, lastDot)) + extension;
+				} else {
+					fileParts[i] = slugifyPath(fileParts[i]);
+				}
 			}
 		} else {
 			fileParts[i] = slugifyPath(fileParts[i]);
