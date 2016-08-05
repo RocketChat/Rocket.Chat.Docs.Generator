@@ -20,7 +20,7 @@ function slugifyLinks(rootPath) {
 				if (!$(this).attr('href').match(/(^https?:\/\/|\/\/)/)) {
 					var old = decodeURIComponent($(this).attr('href'));
 
-					if (old.match(/^\.+/)) {
+					if (old.match(/^[\.0-9a-zA-Z]+/)) {
 						old = parseRelative(old, file);
 					}
 
@@ -46,14 +46,19 @@ function parseRelative(link, file) {
 	var fileParts = file.split('/');
 	var linkParts = link.split('/');
 
-	var parentCount = linkParts.length;
+	var parentCount;
+	if (linkParts.indexOf('/') === -1) {
+		parentCount = fileParts.length - 1;
+	} else {
+		parentCount = linkParts.length;
+	}
 
 	var relativeLink = [];
 
 	for (var i = 0, total = linkParts.length; i < total; i++) {
 		if (linkParts[i] === '..') {
 			parentCount--;
-		} else {
+		} else if (linkParts[i] !== '.') {
 			relativeLink.push(linkParts[i]);
 		}
 	}

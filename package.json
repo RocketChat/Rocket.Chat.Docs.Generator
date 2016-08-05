@@ -1,6 +1,9 @@
 {
   "name": "Rocket.Chat.Docs.Generator",
   "private": true,
+  "scripts": {
+    "serve": "gulp"
+  },
   "dependencies": {
     "async": "^2.0.0-rc.5",
     "cheerio": "^0.20.0",
