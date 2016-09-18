@@ -44,6 +44,8 @@ function slug(filePath, data, removeMDLink) {
 				} else {
 					fileParts[i] = slugifyPath(fileParts[i]);
 				}
+			} else {
+				fileParts[i] = slugifyPath(fileParts[i]);
 			}
 		} else {
 			fileParts[i] = slugifyPath(fileParts[i]);
