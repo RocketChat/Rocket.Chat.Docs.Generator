@@ -31,7 +31,7 @@ function slug(filePath, data, removeMDLink) {
 	for (var i = 0; i < totalParts; i++) {
 		fileParts[i] = fileParts[i].replace(/^[0-9]+\. /, '');
 		if (i + 1 === totalParts) {
-			if (fileParts[i].match(/\.(md|jpg|png|gif|svg)$/) || fileParts[i].indexOf('.') === -1) {
+			if (fileParts[i].match(/\.(md)$/) || fileParts[i].indexOf('.') === -1) {
 				var lastDot = fileParts[i].lastIndexOf('.');
 				if (lastDot > -1) {
 					// console.log('name ->',fileParts[i].substr(0, lastDot));
@@ -44,7 +44,7 @@ function slug(filePath, data, removeMDLink) {
 				} else {
 					fileParts[i] = slugifyPath(fileParts[i]);
 				}
-			} else {
+			} else if (!fileParts[i].match(/\.(jpg|png|gif|svg)$/)) {
 				fileParts[i] = slugifyPath(fileParts[i]);
 			}
 		} else {
