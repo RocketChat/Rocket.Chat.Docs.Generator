@@ -1,31 +1,31 @@
 # Installation
 
-1. Make sure you've installed all requirements
+Make sure you've installed all requirements
 
 ```
 npm i -g gulp-cli
 ```
 
-2. Clone this repository
+Clone this repository
 
 ```
 git clone https://github.com/RocketChat/Rocket.Chat.Docs.Generator.git
 cd Rocket.Chat.Docs.Generator
 ```
 
-3. Install dependencies using `npm`
+Install dependencies using `npm`
 
 ```
 npm i
 ```
 
-4. Fetch the `Rocket.Chat.Docs` source files, into a `src` directory
+Fetch the `Rocket.Chat.Docs` source files, into a `src` directory
 
 ```
 gulp fetch
 ```
 
-5. Compile assets and serve the transformed pages locally:
+Compile assets and serve the transformed pages locally:
 
 ```
 gulp
