@@ -9,7 +9,8 @@ npm i -g gulp-cli
 2. Clone this repository
 
 ```
-git clone https://github.com/[username]/[repository]
+git clone https://github.com/RocketChat/Rocket.Chat.Docs.Generator.git
+cd Rocket.Chat.Docs.Generator
 ```
 
 3. Install dependencies using `npm`
