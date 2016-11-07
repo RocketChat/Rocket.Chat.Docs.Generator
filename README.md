@@ -1,14 +1,35 @@
 # Installation
 
-1. Make sure you've installed all requirements
-2. Clone this repository:  
-  `git clone https://github.com/[username]/[repository]`
-3. Install dependencies using `npm`:  
-  `npm i`
-4. Fetch the `Rocket.Chat.Docs` source files, into a `src` directory:  
-  `gulp fetch`
-5. Compile assets and serve the transformed pages locally:
-  `gulp`
+Make sure you've installed all requirements
+
+```
+npm i -g gulp-cli
+```
+
+Clone this repository
+
+```
+git clone https://github.com/RocketChat/Rocket.Chat.Docs.Generator.git
+cd Rocket.Chat.Docs.Generator
+```
+
+Install dependencies using `npm`
+
+```
+npm i
+```
+
+Fetch the `Rocket.Chat.Docs` source files, into a `src` directory
+
+```
+gulp fetch
+```
+
+Compile assets and serve the transformed pages locally:
+
+```
+gulp
+```
 
 It will also create a `build` directory with the static pages.
 
@@ -19,10 +40,6 @@ It will also create a `build` directory with the static pages.
 3. Test using a browser 
 4. Repeat 1 if required
 5. `git push` the tested final changes back to `Rocket.Chat.Docs`
-
-# Requirements
-
-* Gulp (`npm i -g gulp-cli`)
 
 ## Note
 
