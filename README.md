@@ -44,3 +44,5 @@ It will also create a `build` directory with the static pages.
 ## Note
 
 If you are adding files or directories to the docs, the *hot reload* will not see those files/directories until you restart `gulp`.
+
+You could also symlink a local copy of the docs repo instead of fetching it, e.g. `ln -s ../rocket.chat.docs src` - assuming docs were pulled as a sibling to the generator.
