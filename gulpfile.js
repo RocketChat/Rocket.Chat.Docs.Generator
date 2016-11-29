@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 var del = require('del');
 var exec = require('child_process').exec;
 var gulp = require('gulp');
@@ -18,11 +19,11 @@ function clean(path) {
 var build = false;
 
 // Object with directory paths for further usage
-var rootPath = '/docs';
+var rootPath = path.sep + 'docs';
 
 var dirs = {
-	source: './src',
-	build: './build' + rootPath
+	source: path.join('.', 'src'),
+	build: path.join('.', 'build', rootPath)
 };
 
 // Task to compile using metalsmith
