@@ -19,7 +19,7 @@ function clean(path) {
 var build = false;
 
 // Object with directory paths for further usage
-var rootPath = path.sep + 'docs';
+var rootPath = '/docs';
 
 var dirs = {
 	source: path.join('.', 'src'),
