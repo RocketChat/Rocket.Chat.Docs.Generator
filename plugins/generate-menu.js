@@ -1,5 +1,6 @@
 var _ = require('underscore');
 var slugifyPath = require('slugify-path').default;
+var path = require('path');
 
 function createTree(fileTree, items) {
 	var item = items.splice(0, 1);
@@ -57,7 +58,7 @@ function generateMenu() {
 		Object.keys(files).forEach(function(file) {
 			var data = files[file];
 
-			var fileParts = data.originalName.split('/');
+			var fileParts = data.originalName.split(path.sep);
 			var totalParts = fileParts.length;
 
 			createTree(fileTree, fileParts);

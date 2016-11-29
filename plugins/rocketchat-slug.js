@@ -1,10 +1,12 @@
 var slugifyPath = require('slugify-path').default;
+var path = require('path');
 
 function slug(filePath, data, removeMDLink) {
-	if (filePath.charAt(0) === '/') {
+	if (filePath.charAt(0) === path.sep) {
 		filePath = filePath.substr(1);
 	}
-	var fileParts = filePath.split('/');
+	
+	var fileParts = filePath.split(path.sep);
 	var totalParts = fileParts.length;
 
 	var fileName = fileParts[totalParts - 1];
@@ -18,7 +20,7 @@ function slug(filePath, data, removeMDLink) {
 				previousPart = 1;
 			}
 
-			var title = fileParts[totalParts - previousPart].replace(/(^|\/)[0-9\. ]+/g, '$1');
+			var title = fileParts[totalParts - previousPart].replace(new RegExp(`(^|\${path.sep})[0-9. ]+`, 'g'), '$1');
 
 			if (title === 'index.md') {
 				data.title = 'Rocket.Chat Docs';
@@ -53,7 +55,7 @@ function slug(filePath, data, removeMDLink) {
 		// console.log('fileParts[i] ->',fileParts[i]);
 	}
 
-	return fileParts.join('/');
+	return fileParts.join(path.sep);
 }
 
 module.exports = slug;
