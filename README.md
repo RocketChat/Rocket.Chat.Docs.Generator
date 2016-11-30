@@ -1,34 +1,24 @@
-# Installation
+# Usage
 
-Make sure you've installed all requirements
-
-```
-npm i -g gulp-cli
-```
-
-Clone this repository
+Clone this repository:
 
 ```
 git clone https://github.com/RocketChat/Rocket.Chat.Docs.Generator.git
 cd Rocket.Chat.Docs.Generator
 ```
 
-Install dependencies using `npm`
+Install dependencies using `npm`:
 
 ```
 npm i
 ```
 
-Fetch the `Rocket.Chat.Docs` source files, into a `src` directory
-
-```
-gulp fetch
-```
+Fetch the [Rocket.Chat.Docs](https://github.com/RocketChat/Rocket.Chat.Docs) source files, into a `src` directory or you could also symlink a local copy of the docs repo instead of fetching it, e.g. `ln -s ../rocket.chat.docs src` - assuming docs were pulled as a sibling to the generator.
 
 Compile assets and serve the transformed pages locally:
 
 ```
-gulp
+npm run serve
 ```
 
 It will also create a `build` directory with the static pages.
@@ -44,5 +34,3 @@ It will also create a `build` directory with the static pages.
 ## Note
 
 If you are adding files or directories to the docs, the *hot reload* will not see those files/directories until you restart `gulp`.
-
-You could also symlink a local copy of the docs repo instead of fetching it, e.g. `ln -s ../rocket.chat.docs src` - assuming docs were pulled as a sibling to the generator.
