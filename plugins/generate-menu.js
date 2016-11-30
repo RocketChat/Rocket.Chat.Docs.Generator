@@ -41,7 +41,7 @@ function createMenu(fileTree, initialItem, initialPath, level) {
 		folders.push({
 			label: title,
 			sortTitle: initialItem + '-' + (item.match(/\.md$/) ? '' : item),
-			link: initialPath + '/' + slugifyPath(title),
+			link: initialPath + '/' + slugifyPath(title) + (item.match(/\.md$/) ? '' : '/'),
 			class: linkClass + levelClass
 		});
 
@@ -68,7 +68,7 @@ function generateMenu() {
 
 		var newFolders = _.sortBy(folders, 'sortTitle');
 		for (var file in files) {
-			files[file].path = '/' + file.replace(/(\/[^/]+)\.md/, '$1').replace(/\/index$/, '');
+			files[file].path = '/' + file.replace(/(\/[^/]+)\.md/, '$1').replace(/\/index$/, '/');
 			files[file].mainNav = newFolders;
 		}
 
