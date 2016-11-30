@@ -27,7 +27,7 @@ function slugifyLinks(rootPath) {
 					var newHref = slug(old, null, true);
 
 					if (old.match(/^\//)) {
-						$(this).attr('href', rootPath+'/'+newHref.replace(/(^|\/)[0-9\-]+/g, '$1')+(!newHref.match(/\/$/) && old.match(/\/$/) ? '/' : ''));
+						$(this).attr('href', rootPath+'/'+newHref.replace(/(^|\/)[0-9\-]+/g, '$1')+(newHref.length > 0 && !newHref.match(/\/$/) && old.match(/\/$/) ? '/' : ''));
 					} else {
 						$(this).attr('href', newHref.replace(/(^|\/)[0-9\-]+/g, '$1')+(!newHref.match(/\/$/) && old.match(/\/$/) ? '/' : ''));
 					}
