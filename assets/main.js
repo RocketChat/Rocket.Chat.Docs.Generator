@@ -30,7 +30,6 @@ function _endsWith(item, suffix) {
 function _registerAnchorClick() {
 	$('#content article a').on('click', function(e) {
 		var goingToHref = $(this).attr('href');
-		console.log('goingToHref');
 
 		//Remove all currently active classes
 		$('.sidebar li.active').each(function() {
