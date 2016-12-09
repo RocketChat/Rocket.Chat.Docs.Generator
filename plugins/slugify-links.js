@@ -34,6 +34,15 @@ function slugifyLinks(rootPath) {
 				}
 			});
 
+			$('.content img').each(function() {
+				if (!$(this).attr('src').match(/(^https?:\/\/|\/\/)/)) {
+					var old = decodeURIComponent($(this).attr('src'));
+					if (!old.match(/^\//)) {
+						$(this).attr('src', rootPath + parseRelative(old, file));
+					}
+				}
+			});
+
 			data.contents = new Buffer($.html());
 			cb();
 		}, function() {
