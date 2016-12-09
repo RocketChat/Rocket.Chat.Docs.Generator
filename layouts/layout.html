@@ -12,7 +12,7 @@
 	<!-- Senna is included here so it is loaded before the page loads. -->
 	<script src="https://cdn.jsdelivr.net/senna.js/2.0.4/senna-min.js"></script>
 </head>
-<body data-senna>
+<body>
 	<div class="header">
 		{{> header}}
 	</div>
@@ -20,13 +20,7 @@
 		<div class="sidebar">
 			{{> sidebar }}
 		</div>
-		<div id="content" class="content" data-senna-surface>
-			<script>
-				if (typeof _registerAnchorClick === 'function') {
-					_registerAnchorClick();
-				}
-			</script>
-			
+		<div id="content" class="content">
 			<article>
 				<header>
 					<a href="{{githubPath}}">Edit on GitHub</a>
