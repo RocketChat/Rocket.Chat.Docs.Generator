@@ -20,11 +20,19 @@ function slugifyLinks(rootPath) {
 				if (!$(this).attr('href').match(/(^https?:\/\/|\/\/)/)) {
 					var old = decodeURIComponent($(this).attr('href'));
 
+					var hashPos = old.indexOf('#');
+					var hash = '';
+
+					if (hashPos !== -1) {
+						hash = old.substr(hashPos);
+						old = old.substr(0, hashPos);
+					}
+
 					if (old.match(/^[\.0-9a-zA-Z]+/)) {
 						old = parseRelative(old, file);
 					}
 
-					var newHref = slug(old, null, true);
+					var newHref = slug(old, null, true) + hash;
 
 					if (old.match(/^\//)) {
 						$(this).attr('href', rootPath+'/'+newHref.replace(/(^|\/)[0-9\-]+/g, '$1')+(newHref.length > 0 && !newHref.match(/\/$/) && old.match(/\/$/) ? '/' : ''));
