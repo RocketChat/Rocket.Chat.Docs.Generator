@@ -1,3 +1,4 @@
+var fs = require('fs');
 var Metalsmith = require('metalsmith');
 var layouts = require('metalsmith-layouts');
 var each = require('metalsmith-each');
@@ -16,7 +17,10 @@ var drafts = require('metalsmith-drafts');
 var Handlebars = require('handlebars');
 
 //For when we move files around
-var redirectPaths = require('./src/redirects.json');
+var redirectPaths = {};
+if (fs.existsSync('./src/redirects.json')) {
+	 redirectPaths = require('./src/redirects.json');
+}
 
 var rootDir = '';
 if (process.argv[2]) {
