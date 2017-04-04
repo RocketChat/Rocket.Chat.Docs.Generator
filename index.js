@@ -1,3 +1,4 @@
+var fs = require('fs');
 var Metalsmith = require('metalsmith');
 var layouts = require('metalsmith-layouts');
 var each = require('metalsmith-each');
@@ -7,12 +8,19 @@ var generateMenu = require('./plugins/generate-menu.js');
 var slugifyFiles = require('./plugins/slugify-files.js');
 var slugifyLinks = require('./plugins/slugify-links.js');
 var hljs = require("highlight.js");
+var redirect = require('metalsmith-redirect');
 var slug = require('metalsmith-slug');
 var ignore = require('metalsmith-ignore');
 var headingsidentifier = require("metalsmith-headings-identifier");
 var markdown = require('metalsmith-markdown');
 var drafts = require('metalsmith-drafts');
 var Handlebars = require('handlebars');
+
+//For when we move files around
+var redirectPaths = {};
+if (fs.existsSync('./src/redirects.json')) {
+	 redirectPaths = require('./src/redirects.json');
+}
 
 var rootDir = '';
 if (process.argv[2]) {
@@ -38,6 +46,7 @@ Metalsmith(__dirname)
 	.destination('./build' + rootDir)
 	.clean(true)
 	.use(ignore([
+		'redirects.json',
 		'.git/**/*',
 		'.git*',
 		'.travis/**/*',
@@ -82,6 +91,7 @@ Metalsmith(__dirname)
 		source: './assets', // relative to the working directory
 		destination: './assets' // relative to the build directory
 	}))
+	.use(redirect(redirectPaths))
 	.build(function(err, files) {
 		if (err) {
 			throw err;
