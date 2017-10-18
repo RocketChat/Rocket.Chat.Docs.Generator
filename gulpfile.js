@@ -19,7 +19,7 @@ function clean(path) {
 var build = false;
 
 // Object with directory paths for further usage
-var rootPath = '/docs';
+var rootPath = '/';
 
 var dirs = {
 	source: path.join('.', 'src'),
@@ -73,7 +73,7 @@ gulp.task('less', ['metalsmith'], function(cb) {
 		.pipe(less({
 			paths: './layouts/styles'
 		}))
-		.pipe(gulp.dest('./build' + rootPath + '/assets'));
+		.pipe(gulp.dest('./build' + rootPath + 'assets'));
 });
 
 // Watch for changes in files
