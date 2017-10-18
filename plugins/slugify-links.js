@@ -35,7 +35,7 @@ function slugifyLinks(rootPath) {
 					var newHref = slug(old, null, true) + hash;
 
 					if (old.match(/^\//)) {
-						$(this).attr('href', rootPath+'/'+newHref.replace(/(^|\/)[0-9\-]+/g, '$1')+(newHref.length > 0 && !newHref.match(/\/$/) && old.match(/\/$/) ? '/' : ''));
+						$(this).attr('href', rootPath+newHref.replace(/(^|\/)[0-9\-]+/g, '$1')+(newHref.length > 0 && !newHref.match(/\/$/) && old.match(/\/$/) ? '/' : ''));
 					} else {
 						$(this).attr('href', newHref.replace(/(^|\/)[0-9\-]+/g, '$1')+(!newHref.match(/\/$/) && old.match(/\/$/) ? '/' : ''));
 					}
@@ -80,5 +80,5 @@ function parseRelative(link, file) {
 		}
 	}
 
-	return '/' + fileParts.slice(0, parentCount).join('/') + '/' + relativeLink.join('/');
+	return fileParts.slice(0, parentCount).join('/') + '/' + relativeLink.join('/');
 }
