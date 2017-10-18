@@ -49,9 +49,6 @@ gulp.task('connect', ['metalsmith'], function() {
 		port: 8090,
 		middleware: function() {
 			return [
-				modRewrite([
-					'^/?$ /docs/ [R]'
-				]),
 				serveStatic('build', { extensions: ['html'] })
 			];
 		}

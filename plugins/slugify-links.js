@@ -80,5 +80,5 @@ function parseRelative(link, file) {
 		}
 	}
 
-	return fileParts.slice(0, parentCount).join('/') + '/' + relativeLink.join('/');
+	return '/' + fileParts.slice(0, parentCount).join('/') + '/' + relativeLink.join('/');
 }
