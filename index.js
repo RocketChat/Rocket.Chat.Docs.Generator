@@ -75,6 +75,10 @@ Metalsmith(__dirname)
 			var data = files[file];
 
 			data.rootPath = rootDir;
+
+			if (data.originalName.match(/README\.md$/)) {
+				data.canonical = data.path.replace(/\/$/, '');
+			}
 		});
 		done();
 	})

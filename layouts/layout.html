@@ -11,6 +11,12 @@
 
 	<!-- Senna is included here so it is loaded before the page loads. -->
 	<script src="https://cdn.jsdelivr.net/senna.js/2.0.4/senna-min.js"></script>
+
+	{{#if canonical}}
+		<link rel="canonical" href="https://rocket.chat/docs{{canonical}}" />
+	{{else}}
+		<link rel="canonical" href="https://rocket.chat/docs{{path}}" />
+	{{/if}}
 </head>
 <body>
 	<div class="header">
